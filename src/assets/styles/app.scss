@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'fonts';
+@import 'utilities';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background;
+  color: $white;
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+
+  main {
+    min-height: calc(100vh - 120px);
+  }
+}

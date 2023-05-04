@@ -1,0 +1,333 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Text size utilities
+$text-sizes: (
+  'xs': 0.75rem,
+  'sm': 0.875rem,
+  'base': 1rem,
+  'lg': 1.125rem,
+  'xl': 1.25rem,
+  '2xl': 1.5rem,
+  '3xl': 1.875rem,
+  '4xl': 2.25rem,
+  '5xl': 3rem,
+);
+
+@each $key, $value in $text-sizes {
+  .text-#{$key} {
+    font-size: $value;
+  }
+}
+
+// Text color utilities
+$text-colors: (
+  'primary': $primary,
+  'gray': $gray,
+  'white': $white,
+  'danger': $danger,
+);
+
+@each $key, $value in $text-colors {
+  .text-#{$key} {
+    color: $value;
+  }
+}
+
+// Border utilities
+.border {
+  border: 1px solid $gray;
+}
+
+.border-none {
+  border: none;
+}
+
+// Border radius utilities
+.rounded {
+  border-radius: 0.25rem;
+}
+
+// Margin and padding utilities
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: (
+    $spacer * 1,
+  ),
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+  6: (
+    $spacer * 4,
+  ),
+);
+
+@each $key, $value in $spacers {
+  .m-#{$key} {
+    margin: $value;
+  }
+
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// Width and height utilities
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-sm {
+  max-width: 640px;
+}
+
+.max-w-md {
+  max-width: 768px;
+}
+
+.max-w-lg {
+  max-width: 1024px;
+}
+
+.max-w-xl {
+  max-width: 1280px;
+}
+
+.max-w-2xl {
+  max-width: 1536px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+// Flexbox utilities
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+// Gap utilities
+$gaps: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: (
+    $spacer * 1,
+  ),
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+);
+
+@each $key, $value in $gaps {
+  .gap-#{$key} {
+    gap: $value;
+  }
+
+  .gap-x-#{$key} {
+    column-gap: $value;
+  }
+
+  .gap-y-#{$key} {
+    row-gap: $value;
+  }
+}
+
+// Grid utilities
+$grid-columns: 12;
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+
+// Shadows utilities
+$shadows: (
+  'sm': 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+  'md': 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  'lg': 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  'xl': 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  '2xl': 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+  'inner': inset 0 2px 4px 0 rgba(0, 0, 0, 0.06),
+  'none': none,
+);
+
+@each $key, $value in $shadows {
+  .shadow-#{$key} {
+    box-shadow: $value;
+  }
+}

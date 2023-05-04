@@ -1,0 +1,34 @@
+@import '@/assets/styles/variables';
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid $white;
+  outline: 1px solid transparent;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+
+  input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $white;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  svg {
+    color: $white;
+    margin: 0.5rem;
+  }
+
+  &:focus-within {
+    border-color: $primary;
+    outline-color: $primary;
+
+    svg {
+      color: $primary;
+    }
+  }
+}
