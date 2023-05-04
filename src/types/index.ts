@@ -1,4 +1,4 @@
-export interface Post {
+export interface PostType {
   id: number;
   title: string;
   content: string;
@@ -7,12 +7,15 @@ export interface Post {
   authorName: string;
   category: string;
   tags: string[];
+  isLiked: boolean;
+  comments: CommentType[];
   publishedAt: string;
-  comments: Comment[];
 }
 
-export interface Comment {
+export interface CommentType {
+  id: number;
   name: string;
   email: string;
   content: string;
+  commentedAt: string;
 }

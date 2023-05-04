@@ -16,14 +16,14 @@ body {
   a {
     color: $white;
     text-decoration: none;
+  }
 
-    &:hover {
-      color: $primary;
-      text-decoration: none;
-    }
+  [role='button'] {
+    cursor: pointer;
   }
 
   main {
     min-height: calc(100vh - 120px);
+    height: 100%;
   }
 }

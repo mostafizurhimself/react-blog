@@ -1,6 +1,6 @@
-import { Post } from '@/types';
+import { PostType } from '@/types';
 
-export const posts: Post[] = [
+export const posts: PostType[] = [
   {
     id: 1,
     title: 'Web Development - The Next Big Thing',
@@ -11,6 +11,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-01.png',
     authorName: 'John Doe',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -47,6 +48,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-02.png',
     authorName: 'William Doe',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -83,6 +85,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-03.png',
     authorName: 'Jane Cooper',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -119,6 +122,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-04.png',
     authorName: 'Diana Lim',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -155,6 +159,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-05.png',
     authorName: 'Dan Wilson',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -191,6 +196,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-06.png',
     authorName: 'Patrick Cooper',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -227,6 +233,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-01.png',
     authorName: 'Linda Jackson',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -263,6 +270,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-02.png',
     authorName: 'Steve Smith',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -299,6 +307,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-03.png',
     authorName: 'Floyd Miles',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -335,6 +344,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-04.png',
     authorName: 'James Logan',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -371,6 +381,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-05.png',
     authorName: 'Tommy Barnes',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -407,6 +418,7 @@ export const posts: Post[] = [
     imageUrl: '/images/posts/post-06.png',
     authorName: 'Claire Robertson',
     comments: [],
+    isLiked: false,
     content: `
     <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum

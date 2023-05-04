@@ -1,12 +1,13 @@
-import { ErrorBoundary } from 'react-error-boundary';
-import { BrowserRouter } from 'react-router-dom';
-import ErrorFallback from './components/ErrorFallback';
 import Router from '@/router';
-import { Provider } from 'react-redux';
 import { store } from '@/store';
+import { ErrorBoundary } from 'react-error-boundary';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { PuffLoader } from 'react-spinners';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import { PuffLoader } from 'react-spinners';
+import ErrorFallback from './components/ErrorFallback';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const persistor = persistStore(store, {}, function () {
@@ -27,6 +28,7 @@ function App() {
           >
             <BrowserRouter>
               <Router />
+              <Toaster />
             </BrowserRouter>
           </PersistGate>
         </Provider>

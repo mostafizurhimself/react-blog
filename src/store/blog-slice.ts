@@ -1,16 +1,14 @@
 import type { RootState } from '@/store';
-import { Comment, Post } from '@/types';
+import { CommentType, PostType } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { posts } from '@/data/posts';
 
 interface BlogState {
-  posts: Post[];
-  likedPosts: Post[];
+  posts: PostType[];
 }
 
 const initialState: BlogState = {
   posts,
-  likedPosts: [],
 };
 
 export const blogSlice = createSlice({
@@ -21,19 +19,32 @@ export const blogSlice = createSlice({
       state: BlogState,
       action: PayloadAction<{
         postId: number;
-        comment: Comment;
+        comment: Omit<CommentType, 'id' | 'commentedAt'>;
       }>
     ) {
       const { postId, comment } = action.payload;
       const post = state.posts.find((post) => post.id === postId);
       if (post) {
-        post.comments.push(comment);
+        post.comments.unshift({
+          ...comment,
+          id: post.comments.length + 1,
+          commentedAt: new Date().toISOString(),
+        });
+      }
+    },
+    toggleLike(state: BlogState, action: PayloadAction<number>) {
+      const post = state.posts.find((post) => post.id === action.payload);
+      if (post) {
+        post.isLiked = !post.isLiked;
       }
     },
   },
 });
 
-export const { addComment } = blogSlice.actions;
+export const { addComment, toggleLike } = blogSlice.actions;
 
 export const getBlogPosts = (state: RootState) => state.blog.posts;
-export const getLikedPosts = (state: RootState) => state.blog.likedPosts;
+export const getLikedPosts = (state: RootState) => state.blog.posts.filter((post) => post.isLiked);
+export const getPostById = (state: RootState, postId: number) => {
+  return state.blog.posts.find((post) => post.id === postId);
+};
