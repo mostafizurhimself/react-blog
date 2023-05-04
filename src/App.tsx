@@ -6,8 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { PuffLoader } from 'react-spinners';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import ErrorFallback from './components/ErrorFallback';
 import { Toaster } from 'react-hot-toast';
+import { FallbackProps } from 'react-error-boundary';
 
 function App() {
   const persistor = persistStore(store, {}, function () {
@@ -34,6 +34,17 @@ function App() {
         </Provider>
       </ErrorBoundary>
     </>
+  );
+}
+
+function ErrorFallback({ error }: FallbackProps) {
+  return (
+    <div className="flex h-screen flex-col items-center justify-center" role="alert">
+      <div className="mx-auto max-w-xl px-1 text-danger">
+        <h2 className="text-lg font-semibold">{error.message} </h2>
+        <p className="h-96 overflow-auto">{error.stack}</p>
+      </div>
+    </div>
   );
 }
 

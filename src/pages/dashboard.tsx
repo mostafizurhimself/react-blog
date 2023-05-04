@@ -18,9 +18,10 @@ const Dashboard = () => {
           })}
         </div>
       ) : (
-        <p className="flex items-center justify-center gap-2 mt-4 text-gray">
-          <span>You have not liked any posts yet</span>
-        </p>
+        <div className="flex flex-col items-center justify-center gap-2 mt-4 text-gray">
+          <img src="/images/no-post.png" alt="no-post" className="max-w-xs w-full" />
+          <p className="mt-4">You have not liked any posts yet</p>
+        </div>
       )}
     </div>
   );

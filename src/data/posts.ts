@@ -10,7 +10,30 @@ export const posts: PostType[] = [
     thumbnailUrl: '/images/posts/post-thumbnail-1.png',
     imageUrl: '/images/posts/post-01.png',
     authorName: 'John Doe',
-    comments: [],
+    comments: [
+      {
+        id: 1,
+        name: 'Jane Cooper',
+        email: 'jane@example.com',
+        content:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+        commentedAt: '2022-08-21T12:00:00.000Z',
+      },
+      {
+        id: 2,
+        name: 'Tom Cook',
+        email: 'tom@example.com',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        commentedAt: '2022-08-21T12:05:03.000Z',
+      },
+      {
+        id: 3,
+        name: 'Brendan Lim',
+        email: 'brendan@example.com',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        commentedAt: '2022-10-21T12:10:00.000Z',
+      },
+    ],
     isLiked: false,
     content: `
     <p>

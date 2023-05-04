@@ -15,8 +15,9 @@ const BlogPage = () => {
 
   if (!post) {
     return (
-      <div className="flex items-center justify-center" style={{ height: '300px' }}>
-        Sorry the post you are looking for is not found
+      <div className="flex flex-col items-center justify-center py-6">
+        <img src="/images/no-post.png" alt="no-port" className="max-w-xs w-full" />
+        <p className="mt-2">Sorry the post you are looking for was not found</p>
       </div>
     );
   }

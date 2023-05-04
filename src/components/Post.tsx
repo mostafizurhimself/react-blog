@@ -1,14 +1,19 @@
-import { PostType } from '@/types';
 import styles from '@/assets/styles/modules/Post.module.scss';
-import { Link } from 'react-router-dom';
+import { PostType } from '@/types';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   post: PostType;
 };
 
 const Post = ({ post }: Props) => {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate(`/blog/${post.id}`);
+  };
   return (
-    <Link to={`/blog/${post.id}`} className={styles.post}>
+    <div role="button" className={styles.post} onClick={handleOnClick}>
       <img className={styles['post-image']} src={post.thumbnailUrl} alt={post.title} />
       <div className={styles['post-footer']}>
         <h3 className={styles['post-title']}>{post.title}</h3>
@@ -17,7 +22,7 @@ const Post = ({ post }: Props) => {
           <span className={styles['post-date']}>{post.publishedAt}</span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

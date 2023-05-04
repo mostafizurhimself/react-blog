@@ -161,6 +161,10 @@ $spacers: (
   max-width: 100%;
 }
 
+.max-w-xs {
+  max-width: 480px;
+}
+
 .max-w-sm {
   max-width: 640px;
 }
@@ -197,7 +201,7 @@ $spacers: (
   min-height: 100vh;
 }
 
-$size: 100;
+$size: 500;
 
 @while $size > 0 {
   .w-#{$size} {
@@ -326,4 +330,13 @@ $shadows: (
   .shadow-#{$key} {
     box-shadow: $value;
   }
+}
+
+// Overflow utilities
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

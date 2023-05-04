@@ -11,7 +11,7 @@ const SearchBox = ({ value, onChange }: Props) => {
   return (
     <div className={style['search-box']}>
       <MagnifyingGlassIcon height={24} width={24} />
-      <input type="text" value={value} onChange={onChange} />
+      <input role="searchbox" type="search" value={value} onChange={onChange} />
     </div>
   );
 };
