@@ -19,3 +19,8 @@ export interface CommentType {
   content: string;
   commentedAt: string;
 }
+
+export interface ProfileType {
+  name: string;
+  email: string;
+}

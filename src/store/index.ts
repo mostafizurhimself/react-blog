@@ -1,17 +1,17 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
-import { blogSlice } from './blog-slice';
+import { globalSlice } from './global-slice';
 
 const rootReducer = combineReducers({
-  [blogSlice.name]: blogSlice.reducer,
+  [globalSlice.name]: globalSlice.reducer,
 });
 
 const persistConfig = {
   timeout: 1000,
   key: 'react-blog',
   storage,
-  whitelist: [blogSlice.name],
+  whitelist: [globalSlice.name],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

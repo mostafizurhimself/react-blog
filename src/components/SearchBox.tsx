@@ -4,7 +4,7 @@ import { ChangeEventHandler } from 'react';
 
 type Props = {
   value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
 const SearchBox = ({ value, onChange }: Props) => {

@@ -1,6 +1,48 @@
+@import '@/assets/styles/variables.scss';
 .header {
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &-logo {
+  }
+
+  &-dropdown {
+    position: relative;
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: $white;
+      cursor: pointer;
+    }
+
+    div {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 150px;
+      background-color: $gray-dark;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+
+      a {
+        width: 100%;
+        padding: 10px 20px;
+        color: $white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: lighten($gray-dark, 10%);
+        }
+      }
+    }
+  }
 }

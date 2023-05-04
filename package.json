@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=3000",
     "build": "tsc && vite build",
-    "start": "vite start",
+    "start": "vite start --port=3000",
     "test": "vitest",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write src/**/*.{ts,tsx,scss,md,json} --config ./.prettierrc"
+    "format": "prettier --write src/**/*.{ts,tsx,scss,json} --config ./.prettierrc"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@reduxjs/toolkit": "^1.9.5",
     "date-fns": "^2.30.0",

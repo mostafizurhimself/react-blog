@@ -1,7 +1,7 @@
 import AddComment from '@/components/CommentForm';
 import CommentList from '@/components/CommentList';
 import { useAppSelector } from '@/hooks/use-app-selector';
-import { getPostById, toggleLike } from '@/store/blog-slice';
+import { getPostById, toggleLike } from '@/store/global-slice';
 import { useParams } from 'react-router-dom';
 import styles from '@/assets/styles/modules/BlogPage.module.scss';
 import { HeartIcon as HeartIconOutlined } from '@heroicons/react/24/outline';

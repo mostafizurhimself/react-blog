@@ -1,9 +1,9 @@
 import { useAppSelector } from '@/hooks/use-app-selector';
-import { getLikedPosts } from '@/store/blog-slice';
+import { getLikedPosts } from '@/store/global-slice';
 import styles from '@/assets/styles/modules/BlogList.module.scss';
 import Post from '@/components/Post';
 
-const Dashboard = () => {
+const LikedPostsPage = () => {
   const likedPosts = useAppSelector(getLikedPosts);
 
   return (
@@ -27,4 +27,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default LikedPostsPage;

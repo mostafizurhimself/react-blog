@@ -1,4 +1,4 @@
-import { posts } from '@/data/posts';
+import { initialState } from '@/store/global-slice';
 import { cleanup, render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,14 +9,12 @@ afterEach(() => {
   cleanup();
 });
 
-function customRender(ui: React.ReactElement, options = {}) {
-  const mockStore = configureStore();
-  const store = mockStore({
-    blog: {
-      posts,
-    },
-  });
+const mockStore = configureStore();
+export const store = mockStore({
+  global: initialState,
+});
 
+function customRender(ui: React.ReactElement, options = {}) {
   return render(ui, {
     // wrap provider(s) here if needed
     wrapper: ({ children }) => {

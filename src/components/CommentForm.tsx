@@ -1,6 +1,5 @@
-import styles from '@/assets/styles/modules/CommentForm.module.scss';
 import { useAppDispatch } from '@/hooks/use-app-dispatch';
-import { addComment } from '@/store/blog-slice';
+import { addComment } from '@/store/global-slice';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -32,46 +31,23 @@ const CommentForm = ({ postId }: Props) => {
   return (
     <div>
       <h2 className="mb-4">Add Comment</h2>
-      <form className={styles['comment-form']} onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="name" className={styles['comment-form-label']}>
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            className={styles['comment-form-input']}
-            {...register('name', { required: true })}
-          />
-          {errors.name && <p>This field is required</p>}
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" {...register('name', { required: true })} />
+          {errors.name && <p>Name is required</p>}
         </div>
         <div className="mt-3">
-          <label htmlFor="email" className={styles['comment-form-label']}>
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className={styles['comment-form-input']}
-            {...(register('email'), { required: true })}
-          />
-          {errors.email && <p>This field is required</p>}
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" {...register('email', { required: true })} />
+          {errors.email && <p>Email is required</p>}
         </div>
         <div className="mt-3">
-          <label htmlFor="content" className={styles['comment-form-label']}>
-            Content
-          </label>
-          <textarea
-            id="content"
-            rows={5}
-            className={styles['comment-form-input']}
-            {...register('content', { required: true })}
-          ></textarea>
-          {errors.email && <p>This field is required</p>}
+          <label htmlFor="content">Content</label>
+          <textarea id="content" rows={5} {...register('content', { required: true })}></textarea>
+          {errors.email && <p>Content is required</p>}
         </div>
-        <button type="submit" className={styles['comment-form-button']}>
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

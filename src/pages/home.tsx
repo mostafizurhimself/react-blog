@@ -2,7 +2,7 @@ import BlogList from '@/components/BlogList';
 import SearchBox from '@/components/SearchBox';
 import { useAppSelector } from '@/hooks/use-app-selector';
 import { useDebounce } from '@/hooks/use-debounce';
-import { getBlogPosts } from '@/store/blog-slice';
+import { getBlogPosts } from '@/store/global-slice';
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 const HomePage = () => {
@@ -23,7 +23,7 @@ const HomePage = () => {
         post.tags.some((tag) => tag.toLowerCase().startsWith(searchQuery))
       );
     });
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, posts]);
 
   return (
     <div>
