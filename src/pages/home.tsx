@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="py-6 flex justify-center">
+      <div className="flex justify-center py-6">
         <SearchBox value={searchValue} onChange={handleSearch} />
       </div>
       <BlogList posts={filteredPosts} />

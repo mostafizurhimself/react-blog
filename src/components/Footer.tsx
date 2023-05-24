@@ -1,7 +1,5 @@
-import styles from '@/assets/styles/modules/Footer.module.scss';
-
 const Footer = () => {
-  return <footer className={styles.footer}>Copyright © 2023. Md Mostafizur Rahman</footer>;
+  return <footer className="py-8 text-center">Copyright © 2023. Md Mostafizur Rahman</footer>;
 };
 
 export default Footer;

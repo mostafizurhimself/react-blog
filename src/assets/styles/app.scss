@@ -1,67 +1,7 @@
-@import 'variables';
-@import 'fonts';
-@import 'utilities';
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: $background;
-  color: $white;
-
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-
-  [role='button'] {
-    cursor: pointer;
-  }
-
-  main {
-    min-height: calc(100vh - 120px);
-    height: 100%;
-  }
-
-  label {
-    display: block;
-    color: $white;
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  input,
-  textarea {
-    font-family: inherit;
-    width: 100%;
-    padding: 0.75rem;
-    background-color: transparent;
-    border: 1px solid $white;
-    outline: 1px solid transparent;
-    border-radius: 8px;
-    color: $white;
-
-    &:focus {
-      border-color: $primary;
-      outline: 1px solid $primary;
-    }
-  }
-
-  button[type='submit'] {
-    cursor: pointer;
-    display: block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: $primary;
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    color: $white;
-    font-weight: 500;
-  }
+  @apply bg-slate-800 text-slate-200;
 }

@@ -1,4 +1,3 @@
-import styles from '@/assets/styles/modules/BlogList.module.scss';
 import { PostType } from '@/types';
 import Post from './Post';
 
@@ -11,13 +10,13 @@ const BlogList = ({ posts }: Props) => {
     return (
       <div className="flex flex-col items-center justify-center">
         <img src="/images/no-post.png" className="w-full max-w-sm" />
-        <p className="mt-2 text-gray">No posts found</p>
+        <p className="text-gray mt-2">No posts found</p>
       </div>
     );
   }
 
   return (
-    <div className={styles['blog-list']}>
+    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {posts.map((post) => {
         return <Post key={post.id} post={post} />;
       })}

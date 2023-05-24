@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
-import Layout from '@/layouts/DefaultLayout';
+import Layout from '@/components/Layout';
 import Error404 from './components/Error404';
 import { PuffLoader } from 'react-spinners';
 

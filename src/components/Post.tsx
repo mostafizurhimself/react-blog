@@ -1,4 +1,3 @@
-import styles from '@/assets/styles/modules/Post.module.scss';
 import { PostType } from '@/types';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,13 +12,17 @@ const Post = ({ post }: Props) => {
     navigate(`/blog/${post.id}`);
   };
   return (
-    <div role="button" className={styles.post} onClick={handleOnClick}>
-      <img className={styles['post-image']} src={post.thumbnailUrl} alt={post.title} />
-      <div className={styles['post-footer']}>
-        <h3 className={styles['post-title']}>{post.title}</h3>
-        <div className="flex justify-between items-end mt-2">
-          <span className={styles['post-category']}>{post.category}</span>
-          <span className={styles['post-date']}>{post.publishedAt}</span>
+    <div
+      role="button"
+      className="rounded-lg bg-slate-700 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+      onClick={handleOnClick}
+    >
+      <img className="transition-transform duration-300 hover:scale-105" src={post.thumbnailUrl} alt={post.title} />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold transition-colors duration-150 hover:text-teal-500">{post.title}</h3>
+        <div className="mt-2 flex items-end justify-between">
+          <span className="text-sm">{post.category}</span>
+          <span className="text-xs text-slate-300">{post.publishedAt}</span>
         </div>
       </div>
     </div>
