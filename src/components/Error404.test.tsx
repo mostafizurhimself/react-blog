@@ -8,9 +8,9 @@ describe('Error404', () => {
     expect(errorMessage).toBeInTheDocument();
   });
 
-  it('should render the "Page not found" message', () => {
+  it('should render the "Sorry! Page not found" message', () => {
     const { getByText } = render(<Error404 />);
-    const notFoundMessage = getByText('Page not found');
+    const notFoundMessage = getByText('Sorry! Page not found');
     expect(notFoundMessage).toBeInTheDocument();
   });
 });

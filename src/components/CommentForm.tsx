@@ -44,12 +44,12 @@ const CommentForm = ({ postId }: Props) => {
         </div>
       </div>
       <div className="mt-8 max-w-2xl space-y-1">
-        <TextArea placeholder="Comment" {...register('content', { required: 'Comment is required' })} />
+        <TextArea placeholder="Write your comment" {...register('content', { required: 'Comment is required' })} />
         {errors.content && <p className="text-xs text-rose-500">{errors.content.message}</p>}
       </div>
       <div className="mt-8">
         <Button type="submit" className="px-8">
-          Add Comment
+          Submit
         </Button>
       </div>
     </form>

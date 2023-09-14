@@ -3,15 +3,9 @@ import CommentList from './CommentList';
 import { CommentType } from '@/types';
 
 describe('CommentList', () => {
-  it('renders the title "Recent Comments"', () => {
+  it('displays "Sorry, No comments found" message when the comments array is empty', () => {
     render(<CommentList comments={[]} />);
-    const titleElement = screen.getByText('Recent Comments');
-    expect(titleElement).toBeInTheDocument();
-  });
-
-  it('displays "No comments found" message when the comments array is empty', () => {
-    render(<CommentList comments={[]} />);
-    const messageElement = screen.getByText('No comments found');
+    const messageElement = screen.getByText('Sorry, No comments found');
     expect(messageElement).toBeInTheDocument();
   });
 

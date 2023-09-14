@@ -19,7 +19,7 @@ const CommentList = ({ comments }: Props) => {
     return (
       <div className="mt-4 flex flex-col items-center justify-center rounded border py-6 dark:border-slate-400">
         <LuSearchX className=" text-slate-400" size={60} />
-        <p className="mt-2 text-sm text-slate-400">Sorry, there are no comments for this post yet</p>
+        <p className="mt-2 text-sm text-slate-400">Sorry, No comments found</p>
       </div>
     );
   }

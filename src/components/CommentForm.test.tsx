@@ -3,12 +3,11 @@ import CommentForm from './CommentForm';
 
 describe('CommentForm', () => {
   it('should render the form correctly', () => {
-    render(<CommentForm postId={1} />);
+    const { getByPlaceholderText } = render(<CommentForm postId={1} />);
 
-    expect(screen.getByText('Add Comment')).toBeInTheDocument();
-    expect(screen.getByLabelText('Name')).toBeInTheDocument();
-    expect(screen.getByLabelText('Email')).toBeInTheDocument();
-    expect(screen.getByLabelText('Content')).toBeInTheDocument();
+    expect(getByPlaceholderText('Your Name')).toBeInTheDocument();
+    expect(getByPlaceholderText('Email Address')).toBeInTheDocument();
+    expect(getByPlaceholderText('Write your comment')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Submit' })).toBeInTheDocument();
   });
 
@@ -20,10 +19,10 @@ describe('CommentForm', () => {
 
     const nameError = await screen.findByText('Name is required');
     const emailError = await screen.findByText('Email is required');
-    const contentError = await screen.findByText('Content is required');
+    const commentError = await screen.findByText('Comment is required');
 
     expect(nameError).toBeInTheDocument();
     expect(emailError).toBeInTheDocument();
-    expect(contentError).toBeInTheDocument();
+    expect(commentError).toBeInTheDocument();
   });
 });
