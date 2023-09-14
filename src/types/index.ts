@@ -20,7 +20,7 @@ export interface CommentType {
   commentedAt: string;
 }
 
-export interface ProfileType {
-  name: string;
-  email: string;
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
 }

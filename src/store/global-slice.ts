@@ -1,19 +1,16 @@
 import type { RootState } from '@/store';
-import { CommentType, PostType, ProfileType } from '@/types';
+import { CommentType, PostType, Theme } from '@/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { posts } from '@/data/posts';
 
 export interface GlobalState {
   posts: PostType[];
-  profile: ProfileType;
+  theme: Theme;
 }
 
 export const initialState: GlobalState = {
   posts,
-  profile: {
-    name: 'John Doe',
-    email: 'john@example.com',
-  },
+  theme: Theme.LIGHT,
 };
 
 export const globalSlice = createSlice({
@@ -43,17 +40,16 @@ export const globalSlice = createSlice({
         post.isLiked = !post.isLiked;
       }
     },
-    updateProfile(state: GlobalState, action: PayloadAction<ProfileType>) {
-      state.profile = action.payload;
+    toggleTheme(state: GlobalState) {
+      state.theme = state.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     },
   },
 });
 
-export const { addComment, toggleLike, updateProfile } = globalSlice.actions;
+export const { addComment, toggleLike, toggleTheme } = globalSlice.actions;
 
 export const getBlogPosts = (state: RootState) => state.global.posts;
-export const getLikedPosts = (state: RootState) => state.global.posts.filter((post) => post.isLiked);
 export const getPostById = (state: RootState, postId: number) => {
   return state.global.posts.find((post) => post.id === postId);
 };
-export const getProfile = (state: RootState) => state.global.profile;
+export const getTheme = (state: RootState) => state.global.theme;

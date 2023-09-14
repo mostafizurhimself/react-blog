@@ -8,8 +8,8 @@ type Props = {
 
 const SearchBox = ({ value, onChange }: Props) => {
   return (
-    <div className="group flex w-full max-w-md items-center overflow-hidden rounded-lg border border-slate-200 focus-within:border-teal-500 focus-within:ring-1 focus-within:ring-teal-500">
-      <MagnifyingGlassIcon height={24} width={24} className="mx-2 group-focus-within:text-teal-500" />
+    <div className="group flex w-full max-w-md items-center overflow-hidden rounded-lg border border-slate-300 focus-within:border-teal-500 focus-within:ring-1 focus-within:ring-teal-500">
+      <MagnifyingGlassIcon height={24} width={24} className="mx-2 text-slate-400 group-focus-within:text-teal-500" />
       <input
         className="w-full bg-transparent py-2 text-sm focus:border-none focus:outline-none"
         role="searchbox"

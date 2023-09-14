@@ -1,11 +1,14 @@
 const Error404 = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="text-center">
-        <h2>404</h2>
-        <p>Page not found</p>
-      </div>
-    </div>
+    <>
+      <main className="grid min-h-screen place-items-center px-6 py-24 sm:py-32 lg:px-8">
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-6xl font-bold text-primary-500">404</p>
+          <p className="mt-2 text-lg font-semibold">Sorry! Page not found</p>
+          <p className="text-sm">The page you requested was not found</p>
+        </div>
+      </main>
+    </>
   );
 };
 

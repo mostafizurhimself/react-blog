@@ -14,7 +14,7 @@ const Post = ({ post }: Props) => {
   return (
     <div
       role="button"
-      className="rounded-lg bg-slate-700 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="rounded-lg bg-white shadow transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-700"
       onClick={handleOnClick}
     >
       <img className="transition-transform duration-300 hover:scale-105" src={post.thumbnailUrl} alt={post.title} />
@@ -22,7 +22,7 @@ const Post = ({ post }: Props) => {
         <h3 className="text-xl font-semibold transition-colors duration-150 hover:text-teal-500">{post.title}</h3>
         <div className="mt-2 flex items-end justify-between">
           <span className="text-sm">{post.category}</span>
-          <span className="text-xs text-slate-300">{post.publishedAt}</span>
+          <span className="text-xs text-slate-400">{post.publishedAt}</span>
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@ const BlogPage = () => {
         </p>
       </div>
       <img src={post.imageUrl} alt={post.title} width={'100%'} />
-      <div className="prose prose-sm prose-invert max-w-full py-4">
+      <div className="prose prose-sm max-w-full py-4 dark:prose-invert">
         <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
       </div>
       <div className="flex items-center justify-between">
@@ -60,9 +60,15 @@ const BlogPage = () => {
         </div>
       </div>
 
-      <div className="mt-8 flex gap-6">
-        <CommentList comments={post.comments} />
-        <AddComment postId={post.id} />
+      <div className="grid grid-cols-2 gap-8">
+        <div className="mt-10">
+          <h3 className="text-2xl font-semibold">Recent Comments</h3>
+          <CommentList comments={post.comments} />
+        </div>
+        <div className="mt-10">
+          <h3 className="text-2xl font-semibold">Leave a comment</h3>
+          <AddComment postId={post.id} />
+        </div>
       </div>
     </div>
   );

@@ -6,8 +6,6 @@ import { PuffLoader } from 'react-spinners';
 
 const HomePage = React.lazy(() => import('@/pages/home'));
 const BlogPage = React.lazy(() => import('@/pages/blog'));
-const ProfilePage = React.lazy(() => import('@/pages/profile'));
-const LikedPostsPage = React.lazy(() => import('@/pages/liked-posts'));
 
 const routes: RouteObject[] = [
   {
@@ -21,14 +19,6 @@ const routes: RouteObject[] = [
       {
         path: 'blog/:id',
         element: <BlogPage />,
-      },
-      {
-        path: 'profile',
-        element: <ProfilePage />,
-      },
-      {
-        path: 'liked-posts',
-        element: <LikedPostsPage />,
       },
     ],
   },
