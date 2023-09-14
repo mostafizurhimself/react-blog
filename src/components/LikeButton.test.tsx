@@ -1,8 +1,6 @@
-import React from 'react';
-import { Provider } from 'react-redux'; // Assuming you use Redux for state management
-import LikeButton from './LikeButton';
-import { fireEvent, render, store } from '@/utils/test-utils';
 import { toggleLike } from '@/store/global-slice';
+import { fireEvent, render, store } from '@/utils/test-utils';
+import LikeButton from './LikeButton';
 
 describe('LikeButton Component', () => {
   it('renders the component with "Like" text when not liked', () => {

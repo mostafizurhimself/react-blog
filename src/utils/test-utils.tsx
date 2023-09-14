@@ -1,13 +1,8 @@
 import { initialState } from '@/store/global-slice';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import { afterEach } from 'vitest';
-
-afterEach(() => {
-  cleanup();
-});
 
 const mockStore = configureStore();
 export const store = mockStore({
