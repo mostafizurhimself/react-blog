@@ -40,7 +40,7 @@ function App() {
 function ErrorFallback({ error }: FallbackProps) {
   return (
     <div className="flex h-screen flex-col items-center justify-center" role="alert">
-      <div className="mx-auto max-w-xl px-1 text-danger">
+      <div className="text-danger mx-auto max-w-xl px-1">
         <h2 className="text-lg font-semibold">{error.message} </h2>
         <p className="h-96 overflow-auto">{error.stack}</p>
       </div>
