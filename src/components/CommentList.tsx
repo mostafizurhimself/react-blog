@@ -17,7 +17,7 @@ const CommentList = ({ comments }: Props) => {
 
   if (comments.length === 0) {
     return (
-      <div className="mt-4 flex flex-col items-center justify-center rounded border py-6 dark:border-slate-400">
+      <div className="mt-4 flex flex-col items-center justify-center rounded border py-6 dark:border-slate-600">
         <LuSearchX className=" text-slate-400" size={60} />
         <p className="mt-2 text-sm text-slate-400">Sorry, No comments found</p>
       </div>

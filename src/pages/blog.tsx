@@ -1,15 +1,12 @@
 import AddComment from '@/components/CommentForm';
 import CommentList from '@/components/CommentList';
+import LikeButton from '@/components/LikeButton';
 import { useAppSelector } from '@/hooks/use-app-selector';
-import { getPostById, toggleLike } from '@/store/global-slice';
+import { getPostById } from '@/store/global-slice';
 import { useParams } from 'react-router-dom';
-import { HeartIcon as HeartIconOutlined } from '@heroicons/react/24/outline';
-import { HeartIcon } from '@heroicons/react/24/solid';
-import { useAppDispatch } from '@/hooks/use-app-dispatch';
 
 const BlogPage = () => {
   const { id } = useParams<{ id: string }>();
-  const dispatch = useAppDispatch();
   const post = useAppSelector((state) => getPostById(state, Number(id)));
 
   if (!post) {
@@ -20,10 +17,6 @@ const BlogPage = () => {
       </div>
     );
   }
-
-  const togglePostLike = () => {
-    dispatch(toggleLike(post.id));
-  };
 
   return (
     <div>
@@ -42,22 +35,15 @@ const BlogPage = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <strong>Tags: </strong>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1">
             {post.tags.map((tag) => (
-              <span key={tag} className="bg-primary rounded p-1 text-sm">
+              <span key={tag} className="rounded bg-primary-500 px-2 py-1 text-xs text-primary-100">
                 {tag}
               </span>
             ))}
           </div>
         </div>
-        <div role="button" className="flex items-center gap-1" onClick={togglePostLike}>
-          {post.isLiked ? (
-            <HeartIcon className="text-teal-500" width={20} height={20} />
-          ) : (
-            <HeartIconOutlined className="text-teal-500" width={20} height={20} />
-          )}
-          {post.isLiked ? <span>Liked</span> : <span>Like</span>}
-        </div>
+        <LikeButton postId={post.id} isLiked={post.isLiked} />
       </div>
 
       <div className="grid grid-cols-2 gap-8">
