@@ -9,8 +9,6 @@ This is a simple blog app built with React, Redux, React Router and Vite.
 - Like/Dislike article
 - Comment on article
 - Search article based on category and tags
-- User profile update
-- User liked articles list
 
 ## Installation
 
